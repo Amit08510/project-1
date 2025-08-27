@@ -1,107 +1,9 @@
-only HTML: Register form with Plain HTML, CSS <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Registration</title>
-</head>
-<body>
-  <div>
-    <h2>Register</h2>
-    <form>
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Enter your name" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Enter your email" required>
-
-      <label for="password">Password</label>
-      <input type="password" id="password" placeholder="Enter password" required>
-
-      <label for="confirm">Confirm Password</label>
-      <input type="password" id="confirm" placeholder="Confirm password" required>
-
-      <button type="submit">Register</button>
-    </form>
-    HTML + CSS : <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registration</title>
-  <style>
-    * {
-      box-sizing: border-box; /* prevents input overflow */
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding-top: 50px;
-      margin: 0;
-    }
-    .form-container {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      width: 350px;
-      max-width: 90%; /* ensures it fits on small screens */
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .form-container h2 {
-      margin-bottom: 1.5rem;
-      text-align: center;
-      color: #333;
-    }
-    .form-container label {
-      display: block;
-      margin-bottom: 0.3rem;
-      color: #555;
-      font-size: 0.9rem;
-    }
-    .form-container input {
-      width: 100%; /* fills container properly */
-      padding: 0.6rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      outline: none;
-    }
-    .form-container input:focus {
-      border-color: #333;
-    }
-    .form-container button {
-      width: 100%;
-      padding: 0.7rem;
-      background: #000;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .form-container button:hover {
-      background: #333;
-    }
-    /* Output box */
-    .output-box {
-      margin-top: 20px;
-      padding: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background-color: #f8f9fa; /* light gray like Bootstrap */
-    }
-    .output-box h5 {
-      margin-bottom: 0.5rem;
-      color: #333;
-    }
-    .output-box p {
-      margin: 0.3rem 0;
-      color: #555;
-    }
-  </style>
 </head>
 <body>
   <div class="form-container">
@@ -129,9 +31,6 @@ only HTML: Register form with Plain HTML, CSS <!DOCTYPE html>
       <p><strong>Email:</strong> <span id="outEmail"></span></p>
       <p><strong>Password:</strong> <span id="outPassword"></span></p>
     </div>
-  </div>
-</body>
-</html>
   </div>
 </body>
 </html>
