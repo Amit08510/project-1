@@ -1,109 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registration</title>
-  <style>
-    * {
-      box-sizing: border-box; 
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding-top: 50px;
-      margin: 0;
-    }
-    .form-container {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      width: 350px;
-      max-width: 90%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .form-container h2 {
-      margin-bottom: 1.5rem;
-      text-align: center;
-      color: #333;
-    }
-    .form-container label {
-      display: block;
-      margin-bottom: 0.3rem;
-      color: #555;
-      font-size: 0.9rem;
-    }
-    .form-container input {
-      width: 100%; 
-      padding: 0.6rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      outline: none;
-    }
-    .form-container input:focus {
-      border-color: #333;
-    }
-    .form-container button {
-      width: 100%;
-      padding: 0.7rem;
-      background: #000;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .form-container button:hover {
-      background: #333;
-    }
-    /* Output box */
-    .output-box {
-      margin-top: 20px;
-      padding: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background-color: #f8f9fa; 
-    }
-    .output-box h5 {
-      margin-bottom: 0.5rem;
-      color: #333;
-    }
-    .output-box p {
-      margin: 0.3rem 0;
-      color: #555;
-    }
-  </style>
-</head>
-<body>
-  <div class="form-container">
-    <h2>Register</h2>
-    <form id="registerForm">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Enter your name" required>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Enter your email" required>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration (Full stack)</title>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" placeholder="Enter password" required>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-      <label for="confirm">Confirm Password</label>
-      <input type="password" id="confirm" placeholder="Confirm password" required>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background-color: #f8f9fa;
+        color: #212529;
+        line-height: 1.5;
+      }
 
-      <button type="submit">Register</button>
-    </form>
+      .container {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
 
-    <!-- Output box -->
-    <div class="output-box" id="output">
-      <h5>User Data:</h5>
-      <p><strong>Name:</strong> <span id="outName"></span></p>
-      <p><strong>Email:</strong> <span id="outEmail"></span></p>
-      <p><strong>Password:</strong> <span id="outPassword"></span></p>
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 1200px;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .col {
+        flex: 1;
+        min-width: 300px;
+        max-width: 500px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .shadow {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .p-4 {
+        padding: 24px;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .mb-4 {
+        margin-bottom: 24px;
+      }
+
+      h2 {
+        font-size: 24px;
+        font-weight: 500;
+        color: #212529;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        font-size: 16px;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      }
+
+      .form-control:focus {
+        border-color: #86b7fe;
+        outline: 0;
+        box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.25);
+      }
+
+      .mb-3 {
+        margin-bottom: 16px;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 10px 16px;
+        background-color: #212529;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.15s ease-in-out;
+      }
+
+      .btn:hover {
+        background-color: #424649;
+      }
+
+      .btn:disabled {
+        background-color: #6c757d;
+        cursor: not-allowed;
+      }
+
+      .overflow-auto {
+        overflow: auto;
+      }
+
+      /* Table styles */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #dee2e6;
+      }
+
+      th {
+        font-weight: 500;
+        background-color: #f8f9fa;
+      }
+
+      tr:hover {
+        background-color: #f8f9fa;
+      }
+
+      .small {
+        font-size: 12px;
+      }
+
+      .text-muted {
+        color: #6c757d;
+      }
+
+      .text-danger {
+        color: #dc3545;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .row {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .col {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <!-- Form Column -->
+        <div class="col">
+          <div class="card shadow p-4">
+            <h2 class="text-center mb-4">Register</h2>
+            <form id="registerForm">
+              <!-- Full Name -->
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+              </div>
+
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+              </div>
+
+              <!-- Password -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+              </div>
+
+              <!-- Confirm Password -->
+              <div class="mb-3">
+                <label for="confirm" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirm" placeholder="Confirm password" required>
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" class="btn">Register</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Output Column -->
+        <div class="col">
+          <div class="card shadow p-4">
+            <h2 class="text-center mb-4">Registered Users</h2>
+            <div id="output">
+              <div id="usersList" class="overflow-auto" style="max-height: 350px;">
+                <!-- Users will be displayed here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</body>
+
+  </body>
+
 </html>
