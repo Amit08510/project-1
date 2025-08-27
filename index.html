@@ -48,5 +48,23 @@
     </div>
   </div>
 
+  <script>
+    const form = document.getElementById("registerForm");
+    const output = document.getElementById("output");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // prevent page reload
+
+      // get form values
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // set values in output box
+      document.getElementById("outName").textContent = name;
+      document.getElementById("outEmail").textContent = email;
+      document.getElementById("outPassword").textContent = password;
+    });
+  </script>
 </body>
 </html>
