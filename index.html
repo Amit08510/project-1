@@ -1,36 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registration</title>
-</head>
-<body>
-  <div class="form-container">
-    <h2>Register</h2>
-    <form id="registerForm">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Enter your name" required>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Enter your email" required>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration (Full stack)</title>
+  </head>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" placeholder="Enter password" required>
+  <body>
+    <div class="container">
+      <div class="row">
+        <!-- Form Column -->
+        <div class="col">
+          <div class="card shadow p-4">
+            <h2 class="text-center mb-4">Register</h2>
+            <form id="registerForm">
+              <!-- Full Name -->
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+              </div>
 
-      <label for="confirm">Confirm Password</label>
-      <input type="password" id="confirm" placeholder="Confirm password" required>
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+              </div>
 
-      <button type="submit">Register</button>
-    </form>
+              <!-- Password -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+              </div>
 
-    <!-- Output box -->
-    <div class="output-box" id="output">
-      <h5>User Data:</h5>
-      <p><strong>Name:</strong> <span id="outName"></span></p>
-      <p><strong>Email:</strong> <span id="outEmail"></span></p>
-      <p><strong>Password:</strong> <span id="outPassword"></span></p>
+              <!-- Confirm Password -->
+              <div class="mb-3">
+                <label for="confirm" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirm" placeholder="Confirm password" required>
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" class="btn">Register</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Output Column -->
+        <div class="col">
+          <div class="card shadow p-4">
+            <h2 class="text-center mb-4">Registered Users</h2>
+            <div id="output">
+              <div id="usersList" class="overflow-auto" style="max-height: 350px;">
+                <!-- Users will be displayed here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</body>
+
+  </body>
+
 </html>
